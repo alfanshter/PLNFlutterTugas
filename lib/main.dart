@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:plnfix/admin/daftaradmin.dart';
 import 'package:plnfix/admin/informasiadmin.dart';
 import 'package:plnfix/admin/loginadmin.dart';
+import 'package:plnfix/admin/masukandata.dart';
 import 'package:plnfix/admin/menuadmin.dart';
 import 'package:plnfix/admin/pelaporanadmin.dart';
 import 'package:plnfix/app/controllers/auth_controller.dart';
@@ -19,7 +20,7 @@ import 'package:plnfix/user/tampilaninformasi.dart';
 
 import 'pilihuser.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
@@ -47,6 +48,7 @@ class MyApp extends StatelessWidget {
             DaftarAdmin.nameRoute: (context) => DaftarAdmin(),
             PelaporanAdmin.nameRoute: (context) => PelaporanAdmin(),
             InformasiAdmin.nameRoute: (context) => InformasiAdmin(),
+            MasukanDataAdmin.nameRoute: (context) => MasukanDataAdmin(),
             '/pelaporan': (context) => Pelaporan(),
             '/profiluser': (context) => ProfilUser(),
             '/tampilaninformasi': (context) => TampilanInformasi(),

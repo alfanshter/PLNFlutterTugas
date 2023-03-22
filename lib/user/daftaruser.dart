@@ -21,7 +21,7 @@ class DaftarUser extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        title: Text("Daftar Sebagai Admin"),
+        title: Text("Daftar Sebagai Pengguna"),
       ),
       body: Container(
         alignment: Alignment.center,
@@ -99,27 +99,30 @@ class DaftarUser extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(15))),
                   onPressed: () {
-                    if(edtEmail.text.isNotEmpty && edtPassword.text.isNotEmpty && edtNama.text.isNotEmpty){
+                    if (edtEmail.text.isNotEmpty &&
+                        edtPassword.text.isNotEmpty &&
+                        edtNama.text.isNotEmpty) {
                       authC
                           .signup(
-                          email: edtEmail.text,
-                          password: edtPassword.text,
-                          nama: edtNama.text)
+                              email: edtEmail.text,
+                              password: edtPassword.text,
+                              nama: edtNama.text)
                           .then((value) {
                         if (value == "weak-password") {
-                          Get.snackbar("Auth", "Weak Password",backgroundColor: Colors.white);
+                          Get.snackbar("Auth", "Weak Password",
+                              backgroundColor: Colors.white);
                         } else if (value == "email-already-in-use") {
-                          Get.snackbar("Auth", "email-already-in-use",backgroundColor: Colors.white);
+                          Get.snackbar("Auth", "email-already-in-use",
+                              backgroundColor: Colors.white);
                         } else if (value == 1) {
                           Navigator.of(context).pushNamedAndRemoveUntil(
                               MenuUser.nameRoute, (route) => false);
                         }
                       });
-                    }else {
-                      Get.snackbar("Auth", "Jangan kosongi kolom",backgroundColor: Colors.white);
-
+                    } else {
+                      Get.snackbar("Auth", "Jangan kosongi kolom",
+                          backgroundColor: Colors.white);
                     }
-
                   },
                   child: Text(
                     "Daftar",

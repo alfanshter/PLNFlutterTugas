@@ -65,7 +65,7 @@ class _SplashScreen extends State<SplashScreen> {
             height: 16,
           ),
           Text(
-            "Blackout Infromation",
+            "Blackout Information",
             style: TextStyle(
                 fontSize: 20, color: Colors.white, fontFamily: 'poppinsbold'),
           )

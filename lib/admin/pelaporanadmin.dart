@@ -30,9 +30,12 @@ class PelaporanAdmin extends StatelessWidget {
         body: StreamBuilder(
           stream: _dbref.onValue,
           builder: (context, snapshot) {
-            var alamat = snapshot.data?.snapshot.child('alamat').value.toString();
-            var detail = snapshot.data?.snapshot.child('detail').value.toString();
-            var lainnya = snapshot.data?.snapshot.child('lainnya').value.toString();
+            var alamat =
+                snapshot.data?.snapshot.child('alamat').value.toString();
+            var detail =
+                snapshot.data?.snapshot.child('detail').value.toString();
+            var lainnya =
+                snapshot.data?.snapshot.child('lainnya').value.toString();
             return Container(
               width: double.infinity,
               color: Color(0x9943AA6C),
@@ -134,7 +137,8 @@ class PelaporanAdmin extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15))),
                         onPressed: () {
-                          Navigator.of(context).pushNamedAndRemoveUntil(MenuAdmin.nameRoute, (route) => false);
+                          Navigator.of(context).pushNamedAndRemoveUntil(
+                              MenuAdmin.nameRoute, (route) => false);
                         },
                         child: Text(
                           "Selesai",
